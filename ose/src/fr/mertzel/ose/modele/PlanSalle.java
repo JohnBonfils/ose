@@ -1,9 +1,12 @@
 package fr.mertzel.ose.modele ;
 
-import java.util.ArrayList ;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import fr.mertzel.ose.modele.PlanSalle.Poste;
 
 
-public class PlanSalle {
+public class PlanSalle implements Iterable<Poste> {
 
 	public class Poste {
 		private ArrayList<Poste> postesVisibles ;
@@ -146,6 +149,10 @@ public class PlanSalle {
 	
 	public ArrayList<Poste> listerPostes(){
 		return this.lesPostes ;
+	}
+	
+	public Iterator<Poste> iterator () {
+		return lesPostes.iterator();
 	}
 	
 	private void rechercherPostesVisibles(){
